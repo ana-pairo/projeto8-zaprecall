@@ -1,19 +1,32 @@
 import React from "react";
+import "./assets/reset.css";
+import "./assets/style.css";
 import ReactDOM from "react-dom";
-import Screen1 from "./screen1";
+import Home from "./Home/Home";
+import API from "./Recall/API";
 
 function App() {
+  const [start, setStart] = React.useState(true);
+  // const API = [
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "uma", answered: false, answer: "", click: false },
+  //   { question: "duas", answered: false, answer: "", click: false },
+  // ];
+
+  // const questions = [...API].sort(() => Math.random() - 0.5);
+
   return (
     <React.Fragment>
-      {/* <Screen1 /> */}
-      <div className="screen2">
-        <div className="head">
-          <div>
-            <img className="smallLogo" src="./assets/logo-pequeno2.png" />
-          </div>
-          <div className="smallBranch">ZapRecall</div>
-        </div>
-      </div>
+      {start ? <Home start={start} setStart={setStart} /> : <API />}
     </React.Fragment>
   );
 }
