@@ -3,7 +3,7 @@ import "./assets/reset.css";
 import "./assets/style.css";
 import ReactDOM from "react-dom";
 import Home from "./Home/Home";
-import API from "./Recall/API";
+import API from "./API";
 
 function App() {
   const [start, setStart] = React.useState(true);
